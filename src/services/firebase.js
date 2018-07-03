@@ -1,11 +1,11 @@
 import firebase from 'firebase'
 
 var config = {
-  apiKey: 'AIzaSyCqM9bPtHmERf7Zcf2kL-ktaJZu8711Rng',
-  authDomain: 'cropchat-50ff7.firebaseapp.com',
-  databaseURL: 'https://cropchat-50ff7.firebaseio.com',
-  projectId: 'cropchat-50ff7',
-  storageBucket: 'cropchat-50ff7.appspot.com',
+  apiKey: 'AIzaSyCHHStkZCWF3FNHTbcWQJ5AqGuOq9ELo-A',
+  authDomain: 'https://pwa-chat-2a5f9.firebaseapp.com',
+  databaseURL: 'https://pwa-chat-2a5f9.firebaseio.com',
+  projectId: 'pwa-chat-2a5f9',
+  storageBucket: 'pwa-chat-2a5f9.appspot.com',
   messagingSenderId: '187222083715'
 }
 firebase.initializeApp(config)
