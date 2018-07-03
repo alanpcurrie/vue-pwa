@@ -1,10 +1,10 @@
-# cropchat
+# vue pwa
 
-> A cat pictures messaging application
+> A pwa with pwa powers
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 
