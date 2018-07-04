@@ -3,9 +3,11 @@
     <div class="mdl-grid">
       <div class="mdl-cell mdl-cell--3-col mdl-cell mdl-cell--1-col-tablet mdl-cell--hide-phone"></div>
       <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-phone">
-        <div v-for="picture in this.getCats()" class="image-card" @click="displayDetails(picture['.key'])">
+        <div v-for="picture in this.getCats()" v-bind:key="picture" class="image-card" @click="displayDetails(picture['.key'])">
           <div class="image-card__picture">
-            <img :src="picture.url" />
+            <lazy-image
+              :src="picture.url">
+            </lazy-image>
           </div>
           <div class="image-card__comment mdl-card__actions">
             <span>{{ picture.comment }}</span>
@@ -22,6 +24,7 @@
   </div>
 </template>
 <script>
+  import LazyImage from './LazyImage'
   export default {
     methods: {
       displayDetails (id) {
@@ -46,6 +49,9 @@
           localStorage.setItem('cats', JSON.stringify(cachedCats))
         })
       }
+    },
+    components: {
+      LazyImage
     },
     mounted () {
       this.saveCatsToCache()

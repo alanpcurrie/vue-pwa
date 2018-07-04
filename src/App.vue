@@ -15,6 +15,7 @@
     <main class="mdl-layout__content">
       <div class="page-content">
         <router-view></router-view>
+        <vue-progress-bar></vue-progress-bar>
       </div>
     </main>
   </div>
@@ -29,6 +30,23 @@
       hideMenu: function () {
         document.getElementsByClassName('mdl-layout__drawer')[0].classList.remove('is-visible')
         document.getElementsByClassName('mdl-layout__obfuscator')[0].classList.remove('is-visible')
+      },
+      mounted () {
+        this.$Progress.finish()
+      },
+      created () {
+        this.$Progress.start()
+        this.$router.beforeEach((to, from, next) => {
+          if (to.meta.Progress !== undefined) {
+            let meta = to.meta.progess
+            this.$Progress.parseMeta(meta)
+          }
+          this.$Progress.start()
+          next()
+        })
+        this.$router.afterEach((to, from) => {
+          this.$Progress.finish()
+        })
       }
     }
   }

@@ -5,11 +5,17 @@ import Vuefire from 'vuefire'
 import VueResource from 'vue-resource'
 import App from './App'
 import router from './router'
+import VueProgressBar from 'vue-progressbar'
 import { database } from '@/services/firebase'
 
 Vue.use(Vuefire)
 Vue.use(VueResource)
 Vue.use(router)
+Vue.use(VueProgressBar, {
+  color: 'rgb(143, 255, 199)',
+  failedColor: 'red',
+  height: '5px'
+})
 
 Vue.config.productionTip = false
 

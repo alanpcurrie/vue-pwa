@@ -12,7 +12,17 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
+      meta: {
+        progress: {
+          func: [
+            {call: 'color', modifier: 'temp', argument: '#ffb000'},
+            {call: 'fail', modifier: 'temp', argument: '#6e0000'},
+            {call: 'location', modifier: 'temp', argument: 'top'},
+            {call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
+          ]
+        }
+      }
     },
     {
       path: '/detail/:id',
@@ -22,12 +32,32 @@ export default new Router({
     {
       path: '/post',
       name: 'post',
-      component: PostView
+      component: PostView,
+      meta: {
+        progress: {
+          func: [
+            {call: 'color', modifier: 'temp', argument: '#ffb000'},
+            {call: 'fail', modifier: 'temp', argument: '#6e0000'},
+            {call: 'location', modifier: 'temp', argument: 'top'},
+            {call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
+          ]
+        }
+      }
     },
     {
       path: '/camera',
       name: 'camera',
-      component: CameraView
+      component: CameraView,
+      meta: {
+        progress: {
+          func: [
+            {call: 'color', modifier: 'temp', argument: '#ffb000'},
+            {call: 'fail', modifier: 'temp', argument: '#6e0000'},
+            {call: 'location', modifier: 'temp', argument: 'top'},
+            {call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
+          ]
+        }
+      }
     }
   ]
 })
