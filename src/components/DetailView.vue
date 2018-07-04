@@ -13,8 +13,8 @@
         <span>{{ cat.comment }}</span>
       </div>
       <div class="actions">
-        <router-link class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" to="/post">
-          ANSWER
+        <router-link class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" to="/">
+         home
         </router-link>
       </div>
     </div>

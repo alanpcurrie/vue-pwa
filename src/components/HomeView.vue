@@ -38,6 +38,12 @@
           return JSON.parse(localStorage.getItem('cats'))
         }
       },
+      noCats () {
+        const url = this.picture.url
+        if (url === null) {
+          console.log('no cats')
+        }
+      },
       saveCatsToCache () {
         this.$root.$firebaseRefs.cat.orderByChild('created_at').once('value', (snapchot) => {
           let cachedCats = []
@@ -74,9 +80,11 @@
   .image-card {
     position: relative;
     margin-bottom: 8px;
+    cursor: pointer;
   }
   .image-card__picture > img {
     width:100%;
+
   }
   .image-card__comment {
     position: absolute;
