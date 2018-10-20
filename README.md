@@ -1,5 +1,4 @@
 # vue pwa
-
 > A pwa with pwa powers
 
 ## Build Setup

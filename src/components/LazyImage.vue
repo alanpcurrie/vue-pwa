@@ -31,6 +31,6 @@
 </script>
 <style scoped>
 img {
-  object-fit: contain;
+  object-fit: cover;
 }
 </style>

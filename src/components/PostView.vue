@@ -21,7 +21,6 @@
   </form>
 </template>
 <script>
-  import parse from 'xml-parser'
   import postCat from '@/mixins/postCat'
 
   export default {
@@ -32,10 +31,15 @@
         'title': null
       }
     },
+
     mounted () {
-      this.$http.get('https://thecatapi.com/api/images/get?format=xml&results_per_page=1').then(response => {
-        this.catUrl = parse(response.body).root.children['0'].children['0'].children['0'].children['0'].content
-      })
+      this.$http.get('https://api.thecatapi.com/v1/images/search?format=json', {
+        headers: {
+          'x-api-key': '6e2d6da9-03bd-4b3a-a4e1-290e68e3fd79',
+          'Content-Type': 'application/json'
+        }}).then(response => {
+          this.catUrl = response.body[0].url
+        })
     }
   }
 </script>
