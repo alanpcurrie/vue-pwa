@@ -39,10 +39,14 @@
           'Content-Type': 'application/json'
         }}).then(response => {
           this.catUrl = response.body[0].url
+        }).catch(err => {
+          console.log(err)
         })
     }
   }
+
 </script>
+
 <style scoped>
   .waiting {
     padding: 10px;

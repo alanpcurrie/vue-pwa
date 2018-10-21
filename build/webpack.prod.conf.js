@@ -127,6 +127,10 @@ var webpackConfig = merge(baseWebpackConfig, {
         handler: 'cacheFirst'
       },
       {
+        urlPattern: /^https:\/\/cdn2\.thecatapi\.com\/images\//,
+        handler: 'cacheFirst'
+      },
+      {
         urlPattern: /^https:\/\/(\d+)\.media\.tumblr\.com\//,
         handler: 'cacheFirst'
       },
